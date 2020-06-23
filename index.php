@@ -67,22 +67,18 @@ try {
                 <th>Age</th>
               </tr>
             </thead>
-
+            
             <tbody>
+                <?php foreach($result as $value) { ?>
               <tr>
-                <td>1</td>
-                <td>User</td>
-                <td>20</td>
+                <td><?php echo "$value[id]" ?></td>
+                <td><?php echo "$value[name]" ?></td>
+                <td><?php echo "$value[age]" ?></td>
               </tr>
-
-              <tr>
-                <td>2</td>
-                <td>User</td>
-                <td>30</td>
-              </tr>
-
+                <?php } ?>
             </tbody>
           </table>
+
       </div>
 
           <div id ="tab2" class="tab-pane ">
