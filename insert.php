@@ -13,14 +13,13 @@ try {
     $sql = "insert into user values (:id, :name, :age)";
     $stmt = $dbh->prepare($sql);
     $params = array(':id' => $id, ':name' => $name, ':age', $age);
-
-    $result = $dbh->query($params);
+    $stmt->execute($params);
 
     header('Location: index.php?fg=1');
 
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage() . "\n";
-    header('Location: index.php?fg=1err=')
+    header('Location: index.php?fg=0?err='.$e->getMessage())
     exit();
 }
 ?>
