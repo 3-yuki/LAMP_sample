@@ -40,12 +40,20 @@ try {
               </p>
       </div>
   </div>
-  <ul class="tab-content">
-  <div class="containar">
-    <li class="nav-item"><a href="#tab1" class="nav-link active" data-toggle="tab">Slect</a></li>
-    <li class="nav-item"><a href="#tab2" class="nav-link active" data-toggle="tab">Insert</a></li>
-    <li class="nav-item"><a href="#tab3" class="nav-link active" data-toggle="tab">Update</a></li>
-    <li class="nav-item"><a href="#tab4" class="nav-link active" data-toggle="tab">Delete</a></li>
+  <ul class="">
+  <div class="">
+    <li class="nav-item">
+      <a href="#tab1" class="nav-link active" data-toggle="tab">Slect</a>
+    </li>
+    <li class="nav-item">
+      <a href="#tab2" class="nav-link active" data-toggle="tab">Insert</a>
+    </li>
+    <li class="nav-item">
+      <a href="#tab3" class="nav-link active" data-toggle="tab">Update</a>
+    </li>
+    <li class="nav-item">
+      <a href="#tab4" class="nav-link active" data-toggle="tab">Delete</a>
+    </li>
   </ul>
     
     <div class="tab-content">
@@ -61,29 +69,46 @@ try {
             </thead>
 
             <tbody>
-                <?php foreach($result as $value) { ?>
               <tr>
-                <td><?php echo "$value[id]" ?></td>
-                <td><?php echo "$value[name]" ?></td>
-                <td><?php echo "$value[age]" ?></td>
+                <td>1</td>
+                <td>User</td>
+                <td>20</td>
               </tr>
-                <?php } ?>
+
+              <tr>
+                <td>2</td>
+                <td>User</td>
+                <td>30</td>
+              </tr>
+
             </tbody>
           </table>
-
       </div>
-      <div id ="tab2" class="tab-pane ">
-        <h1>sample2</h1>
-    </div>
-      <div id ="tab3" class="tab-pane ">
-        <h1>sample3</h1>
-        </div>
-      <div id ="tab4" class="tab-pane ">
-        <h1>sample4</h1>
-        </div>
-      </div>
-    </div>
 
+          <div id ="tab2" class="tab-pane ">
+            <form class="mt-5" action="./insert.php" method="POST">
+               <div class="form-group">
+                 <label for="id">ID</label>
+                 <input class="form-control" type="text" name="id" id="id">
+               </div>
+            </form>
+
+        </div>
+          <form action="">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input class="form-control" type="text" name="name" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input class="form-control" type="text" name="age" id="age">
+        </div>
+
+          <button type="submit" class="btn btn-primary">Insert</button>
+      </form>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
