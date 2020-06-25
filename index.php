@@ -7,6 +7,7 @@ try {
 
     $sql = "select * from user";
     $result = $dbh->query($sql);
+    $del_list = $dbh->query($sql);
 
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage() . "\n";
@@ -71,7 +72,7 @@ try {
             <tbody>
                 <?php foreach($result as $value) { ?>
               <tr>
-                <td><?php echo "$value[id]" ?></td>
+                <th><?php echo "$value[id]" ?></th>
                 <td><?php echo "$value[name]" ?></td>
                 <td><?php echo "$value[age]" ?></td>
               </tr>
@@ -128,6 +129,35 @@ try {
           <button type="submit" class="btn btn-primary">Update</button>
       </form>
     </div>
+
+    <div class="tab-content">
+      <div id ="tab4" class="tab-pane active">
+        <table class="table table-hover mt-2">
+            <thead class="thead-dark">
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+                <?php foreach($del_list as $value) { ?>
+              <tr>
+                <th><?php echo "$value[id]" ?></th>
+                <td><?php echo "$value[name]" ?></td>
+                <td><?php echo "$value[age]" ?></td>
+                <td>
+                  <form action="./delete.php" method="$_GET">
+                    <input type="text" class="d-none" name="id" value="<?php echo "$value[id]" ?>"
+                    <button type="submit" class="btn btn-danger">delete</button>
+                </td>
+              </tr>
+                <?php } ?>
+            </tbody>
+          </table>
+
+      </div>
 
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
