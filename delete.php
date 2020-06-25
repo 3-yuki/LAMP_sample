@@ -8,7 +8,6 @@ try {
 
     $id = $_GET['id'];
 
-
     $sql = "delete from user where id=:id";
     $stmt = $dbh->prepare($sql);
     $params = array(':id' => $id, ':name' => $name, ':age', $age);
@@ -18,7 +17,7 @@ try {
 
 } catch (PDOException $e) {
     echo "接続失敗: " . $e->getMessage() . "\n";
-    header('Location: index.php?fg=0?err='.$e->getMessage())
+    header('Location: index.php?fg=2?err='.$e->getMessage())
     exit();
 }
 ?>
