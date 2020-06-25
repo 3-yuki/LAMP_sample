@@ -44,8 +44,21 @@ try {
 
 <div class="container">
     <?php if($_GET['fg'] == 1) { ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+      DB <strong>success!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+      </div>
         <p>success</p>
     <?php } else if ($_GET['fg'] == 2) { ?>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      DB <strong>NO!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> 
         <p>error</p>
     <?php } ?> 
 </div>
@@ -65,6 +78,7 @@ try {
       <a href="#tab4" class="nav-link active" data-toggle="tab">Delete</a>
     </li>
   </ul>
+  </div>
     
     <div class="tab-content">
       <div id ="tab1" class="tab-pane active">
